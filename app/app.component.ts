@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
     }
 
     getDate(dateIso: string): string {
-        var date = new Date(dateIso);
+        let date = new Date(dateIso);
         return date.toLocaleString();
     }
 }
