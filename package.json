@@ -1,5 +1,5 @@
 {
-    "name": "todolist",
+    "name": "getelements",
     "version": "1.0.0",
     "scripts": {
         "start": "concurrent \"npm run tsc:w\" \"npm run lite\" ",

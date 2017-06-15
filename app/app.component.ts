@@ -6,6 +6,7 @@ import { Gist } from './gist/gist';
 @Component({
     selector: 'get-elements',
     templateUrl: 'template.html',
+    styles: [`.anonimous{color:gray;}`],
     providers: [HttpService]
 })
 export class AppComponent implements OnInit {
@@ -26,5 +27,14 @@ export class AppComponent implements OnInit {
             return 'Anonimous';
         }
 
+    }
+
+    isAnonimous(gist: Gist): boolean{
+        return !('owner' in gist);
+    }
+
+    getDate(dateIso: string): string {
+        var date = new Date(dateIso);
+        return date.toLocaleString();
     }
 }

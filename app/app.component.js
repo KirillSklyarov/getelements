@@ -27,12 +27,20 @@ var AppComponent = (function () {
             return 'Anonimous';
         }
     };
+    AppComponent.prototype.isAnonimous = function (gist) {
+        return !('owner' in gist);
+    };
+    AppComponent.prototype.getDate = function (dateIso) {
+        var date = new Date(dateIso);
+        return date.toLocaleString();
+    };
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'get-elements',
         templateUrl: 'template.html',
+        styles: [".anonimous{color:gray;}"],
         providers: [http_service_1.HttpService]
     }),
     __metadata("design:paramtypes", [http_service_1.HttpService])
