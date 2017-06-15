@@ -6,7 +6,7 @@ const API_URL = 'https://api.github.com';
 export class HttpService{
  
     constructor(private http: Http){ }
-    getData(){
-        return this.http.get(API_URL + '/gists/public');
+    getData(query: string){
+        return this.http.get(API_URL + query);
     }
 }

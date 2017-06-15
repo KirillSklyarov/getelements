@@ -15,8 +15,8 @@ var HttpService = (function () {
     function HttpService(http) {
         this.http = http;
     }
-    HttpService.prototype.getData = function () {
-        return this.http.get(API_URL + '/gists/public');
+    HttpService.prototype.getData = function (query) {
+        return this.http.get(API_URL + query);
     };
     return HttpService;
 }());

@@ -6,16 +6,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
+var InfoComponent = (function () {
+    function InfoComponent() {
     }
-    return AppComponent;
+    return InfoComponent;
 }());
-AppComponent = __decorate([
+InfoComponent = __decorate([
     core_1.Component({
-        selector: 'get-elements-app',
-        template: "<div>\n                    <h3>Info about gists</h3>\n                    <router-outlet></router-outlet>\n               </div>"
+        selector: 'info-app',
+        template: "<h3>Information about gist</h3>"
     })
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+], InfoComponent);
+exports.InfoComponent = InfoComponent;
+//# sourceMappingURL=info.component.js.map

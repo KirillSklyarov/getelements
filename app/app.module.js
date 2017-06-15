@@ -7,8 +7,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
+var router_1 = require("@angular/router");
 var app_component_1 = require("./app.component");
-var http_1 = require("@angular/http");
+var home_component_1 = require("./home.component");
+var info_component_1 = require("./info.component");
+// определение маршрутов
+var appRoutes = [
+    { path: '', component: home_component_1.HomeComponent },
+    { path: 'info', component: info_component_1.InfoComponent },
+];
 var AppModule = (function () {
     function AppModule() {
     }
@@ -16,8 +23,8 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, http_1.HttpModule],
-        declarations: [app_component_1.AppComponent],
+        imports: [platform_browser_1.BrowserModule, router_1.RouterModule.forRoot(appRoutes)],
+        declarations: [app_component_1.AppComponent, home_component_1.HomeComponent, info_component_1.InfoComponent],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
