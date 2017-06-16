@@ -1,7 +1,8 @@
 import { NgModule }      from '@angular/core';
+// import { FormsModule }      from '@angular/forms'
 import { BrowserModule } from '@angular/platform-browser';
  
-import {Routes, RouterModule} from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { HttpModule }   from '@angular/http';
 import { HttpService }  from './http.service';
  
@@ -12,11 +13,11 @@ import { InfoComponent } from './info.component';
 // определение маршрутов
 const appRoutes: Routes =[
     { path: '', component: HomeComponent},
-    { path: 'info', component: InfoComponent},
+    { path: 'info/:id', component: InfoComponent},
 ];
  
 @NgModule({
-    imports:      [ HttpModule, BrowserModule, RouterModule.forRoot(appRoutes)],
+    imports:      [ HttpModule, /*FormsModule,*/ BrowserModule, RouterModule.forRoot(appRoutes)],
     declarations: [ AppComponent, HomeComponent, InfoComponent],
     bootstrap:    [ AppComponent ], 
     providers [ HttpService ]

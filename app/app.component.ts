@@ -1,10 +1,12 @@
 import { Component} from '@angular/core';
+import { Router } from '@angular/router';
+import { NgModel} from '@angular/forms';
   
 @Component({
     selector: 'get-elements-app',
     template: `<div>
-                    <h3>Info about gists</h3>
+                    <h1>Gists</h1>
                     <router-outlet></router-outlet>
                </div>`
 })
-export class AppComponent {}
+export class AppComponent { }

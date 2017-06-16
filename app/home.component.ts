@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
         }
 
     }
-
+    
     isAnonimous(gist: Gist): boolean{
         return !('owner' in gist);
     }
@@ -36,4 +36,5 @@ export class HomeComponent implements OnInit {
         let date = new Date(dateIso);
         return date.toLocaleString();
     }
+
 }
