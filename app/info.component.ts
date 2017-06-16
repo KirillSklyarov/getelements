@@ -8,6 +8,8 @@ import { Gist } from './gist/gist';
 @Component({
     selector: 'info-app',
     templateUrl: `info.html`,
+    styles: [`.anonimous{color:gray;}
+            .invisible{display:none;}`],
     providers: [HttpService]
 })
 export class InfoComponent implements OnInit, OnDestroy { 
@@ -49,5 +51,11 @@ export class InfoComponent implements OnInit, OnDestroy {
         return date.toLocaleString();
     }
     
-
+    getAvatarUrl(gist: Gist): string {
+        if ('owner' in gist) {
+            return gist.owner.avatar_url;
+        } else {
+            return "";
+        }
+    }
 }

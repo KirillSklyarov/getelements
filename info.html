@@ -1,7 +1,13 @@
 <h2>Info about gist</h2>
 <div>
     <section>
-        <header [ngClass]="{anonimous:isAnonimous(gist)}">Владелец</header>
-        <p></p>
+        <header>Владелец</header>
+        <p [ngClass]="{anonimous:isAnonimous(gist)}">{{getOwner(gist)}}</p>
+    </section>
+    <section [ngClass]="{invisible:isAnonimous(gist)}">
+        <img height="460" width="460" [src]="getAvatarUrl(gist)">
+    </section>
+    <section>
+        <a [href]="gist.html_url">Страница на Github</a>
     </section>
 </div>

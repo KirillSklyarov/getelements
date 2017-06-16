@@ -43,12 +43,21 @@ var InfoComponent = (function () {
         var date = new Date(dateIso);
         return date.toLocaleString();
     };
+    InfoComponent.prototype.getAvatarUrl = function (gist) {
+        if ('owner' in gist) {
+            return gist.owner.avatar_url;
+        }
+        else {
+            return "";
+        }
+    };
     return InfoComponent;
 }());
 InfoComponent = __decorate([
     core_1.Component({
         selector: 'info-app',
         templateUrl: "info.html",
+        styles: [".anonimous{color:gray;}\n            .invisible{display:none;}"],
         providers: [http_service_1.HttpService]
     }),
     __metadata("design:paramtypes", [http_service_1.HttpService, router_1.ActivatedRoute])
