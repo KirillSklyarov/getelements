@@ -11,20 +11,37 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var http_service_1 = require("./http.service");
+var gist_1 = require("./gist/gist");
 var InfoComponent = (function () {
     function InfoComponent(httpService, activateRoute) {
         var _this = this;
         this.httpService = httpService;
         this.activateRoute = activateRoute;
+        this.gist = new gist_1.Gist();
         this.subscription = activateRoute.params.subscribe(function (params) { return _this.id = params['id']; });
     }
     InfoComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.httpService.getData('/gists/' + this.id).subscribe(function (data) { return _this.gist = data.json(); });
-        alert(this.gist.id);
+        console.log(this.gist.id);
     };
     InfoComponent.prototype.ngOnDestroy = function () {
         this.subscription.unsubscribe();
+    };
+    InfoComponent.prototype.getOwner = function (gist) {
+        if ('owner' in gist) {
+            return gist.owner.login;
+        }
+        else {
+            return 'Anonimous';
+        }
+    };
+    InfoComponent.prototype.isAnonimous = function (gist) {
+        return !('owner' in gist);
+    };
+    InfoComponent.prototype.getDate = function (dateIso) {
+        var date = new Date(dateIso);
+        return date.toLocaleString();
     };
     return InfoComponent;
 }());

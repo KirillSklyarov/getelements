@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
         }
 
     }
-    
+
     isAnonimous(gist: Gist): boolean{
         return !('owner' in gist);
     }

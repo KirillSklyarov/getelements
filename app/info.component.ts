@@ -12,7 +12,7 @@ import { Gist } from './gist/gist';
 })
 export class InfoComponent implements OnInit, OnDestroy { 
     
-    gist: Gist;
+    gist: Gist = new Gist();
     private id: string;
     private subscription: Subscription;
 
@@ -22,7 +22,7 @@ export class InfoComponent implements OnInit, OnDestroy {
 
     ngOnInit(){
         this.httpService.getData('/gists/' + this.id).subscribe((data: Response) => this.gist=data.json());
-        alert(this.gist.id);
+        console.log(this.gist.id);
         
     }
 
@@ -30,7 +30,7 @@ export class InfoComponent implements OnInit, OnDestroy {
         this.subscription.unsubscribe();
     }
 
-    /*
+    
     getOwner(gist: Gist): string {
         if ('owner' in gist) {
             return gist.owner.login;
@@ -48,6 +48,6 @@ export class InfoComponent implements OnInit, OnDestroy {
         let date = new Date(dateIso);
         return date.toLocaleString();
     }
-    */
+    
 
 }
