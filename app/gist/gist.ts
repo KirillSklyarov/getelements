@@ -17,5 +17,32 @@ export class Gist {
     git_push_url: string;
     created_at: string;
     updated_at: string;
+
+    getOwner(): string {
+        if ('owner' in this) {
+            return this.owner.login;
+        } else {
+            return 'Anonimous';
+        }
+
+    }
+
+    isAnonimous(): boolean{
+        return !('owner' in this);
+    }
+
+    getDate(): string {
+        let date = new Date(this.created_at);
+        return date.toLocaleString();
+    }
+    
+    getAvatarUrl(): string {
+        if ('owner' in this) {
+            return this.owner.avatar_url;
+        } else {
+            return "";
+        }
+    }
+
 }
 

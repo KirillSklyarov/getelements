@@ -34,6 +34,14 @@ var HomeComponent = (function () {
         var date = new Date(dateIso);
         return date.toLocaleString();
     };
+    HomeComponent.prototype.getAvatarUrl = function (gist) {
+        if ('owner' in gist) {
+            return gist.owner.avatar_url;
+        }
+        else {
+            return "";
+        }
+    };
     return HomeComponent;
 }());
 HomeComponent = __decorate([

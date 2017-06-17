@@ -2,10 +2,10 @@
 <div>
     <section>
         <header>Владелец</header>
-        <p [ngClass]="{anonimous:isAnonimous(gist)}">{{getOwner(gist)}}</p>
+        <p [ngClass]="{anonimous:gist.isAnonimous()}">{{getOwner(gist)}}</p>
     </section>
-    <section [ngClass]="{invisible:isAnonimous(gist)}">
-        <img height="460" width="460" [src]="getAvatarUrl(gist)">
+    <section [ngClass]="{invisible:gist.isAnonimous()}">
+        <img height="460" width="460" [src]="gist.getAvatarUrl()">
     </section>
     <section>
         <a [href]="gist.html_url">Страница на Github</a>

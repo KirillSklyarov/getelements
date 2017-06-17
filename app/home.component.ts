@@ -37,4 +37,12 @@ export class HomeComponent implements OnInit {
         return date.toLocaleString();
     }
 
+    getAvatarUrl(gist: Gist): string {
+        if ('owner' in gist) {
+            return gist.owner.avatar_url;
+        } else {
+            return "";
+        }
+    }
+
 }
