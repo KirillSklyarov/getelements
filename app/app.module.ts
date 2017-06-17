@@ -1,5 +1,5 @@
 import { NgModule }      from '@angular/core';
-// import { FormsModule }      from '@angular/forms'
+import { FormsModule }      from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
  
 import { Routes, RouterModule } from '@angular/router';
@@ -17,7 +17,7 @@ const appRoutes: Routes =[
 ];
  
 @NgModule({
-    imports:      [ HttpModule, /*FormsModule,*/ BrowserModule, RouterModule.forRoot(appRoutes)],
+    imports:      [ HttpModule, FormsModule, BrowserModule, RouterModule.forRoot(appRoutes)],
     declarations: [ AppComponent, HomeComponent, InfoComponent],
     bootstrap:    [ AppComponent ], 
     providers [ HttpService ]

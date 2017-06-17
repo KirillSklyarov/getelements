@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var http_service_1 = require("./http.service");
+var owner_1 = require("./gist/owner");
 var gist_1 = require("./gist/gist");
 var InfoComponent = (function () {
     function InfoComponent(httpService, activateRoute) {
@@ -18,12 +19,12 @@ var InfoComponent = (function () {
         this.httpService = httpService;
         this.activateRoute = activateRoute;
         this.gist = new gist_1.Gist();
+        this.ownerEditing = false;
         this.subscription = activateRoute.params.subscribe(function (params) { return _this.id = params['id']; });
     }
     InfoComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.httpService.getData('/gists/' + this.id).subscribe(function (data) { return _this.gist = data.json(); });
-        console.log(this.gist.id);
     };
     InfoComponent.prototype.ngOnDestroy = function () {
         this.subscription.unsubscribe();
@@ -50,6 +51,23 @@ var InfoComponent = (function () {
         else {
             return "";
         }
+    };
+    InfoComponent.prototype.ownerEdit = function () {
+        if (this.ownerEditing) {
+            if (this.isAnonimous(this.gist)) {
+                if (this.owner != "Anonimous") {
+                    this.gist.owner = new owner_1.Owner;
+                    this.gist.owner.login = this.owner;
+                }
+            }
+            else {
+                this.gist.owner.login = this.owner;
+            }
+        }
+        else {
+            this.owner = this.getOwner(this.gist);
+        }
+        this.ownerEditing = !this.ownerEditing;
     };
     return InfoComponent;
 }());

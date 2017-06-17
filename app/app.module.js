@@ -6,7 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-// import { FormsModule }      from '@angular/forms'
+var forms_1 = require("@angular/forms");
 var platform_browser_1 = require("@angular/platform-browser");
 var router_1 = require("@angular/router");
 var http_1 = require("@angular/http");
@@ -26,7 +26,7 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [http_1.HttpModule, /*FormsModule,*/ platform_browser_1.BrowserModule, router_1.RouterModule.forRoot(appRoutes)],
+        imports: [http_1.HttpModule, forms_1.FormsModule, platform_browser_1.BrowserModule, router_1.RouterModule.forRoot(appRoutes)],
         declarations: [app_component_1.AppComponent, home_component_1.HomeComponent, info_component_1.InfoComponent],
         bootstrap: [app_component_1.AppComponent],
         providers: [http_service_1.HttpService]

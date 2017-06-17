@@ -2,7 +2,8 @@
 <div>
     <section>
         <header>Владелец</header>
-        <p [ngClass]="{anonimous:isAnonimous(gist)}">{{getOwner(gist)}}</p>
+        <p [ngClass]="{invisible:ownerEditing}" (click)="ownerEdit()">{{getOwner(gist)}}</p>
+        <input type="text" [ngClass]="{invisible:!ownerEditing}" [(ngModel)]="owner">
     </section>
     <section [ngClass]="{invisible:isAnonimous(gist)}">
         <img height="460" width="460" [src]="getAvatarUrl(gist)">

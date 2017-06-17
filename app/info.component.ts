@@ -3,6 +3,7 @@ import { Response} from '@angular/http';
 import { ActivatedRoute} from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { HttpService} from './http.service';
+import { Owner } from './gist/owner';
 import { Gist } from './gist/gist';
 
 @Component({
@@ -15,6 +16,10 @@ import { Gist } from './gist/gist';
 export class InfoComponent implements OnInit, OnDestroy { 
     
     gist: Gist = new Gist();
+
+    owner: string;
+    ownerEditing: boolean = false;
+
     private id: string;
     private subscription: Subscription;
 
@@ -24,8 +29,6 @@ export class InfoComponent implements OnInit, OnDestroy {
 
     ngOnInit(){
         this.httpService.getData('/gists/' + this.id).subscribe((data: Response) => this.gist=data.json());
-        console.log(this.gist.id);
-        
     }
 
     ngOnDestroy(){
@@ -58,4 +61,21 @@ export class InfoComponent implements OnInit, OnDestroy {
             return "";
         }
     }
+
+    ownerEdit() {
+        if (this.ownerEditing) {
+            if (this.isAnonimous(this.gist)){
+                if (this.owner != "Anonimous") {
+                    this.gist.owner = new Owner;
+                    this.gist.owner.login = this.owner;
+                }
+            } else {
+                this.gist.owner.login = this.owner;
+            }
+        } else {
+            this.owner = this.getOwner(this.gist);
+        }
+        this.ownerEditing = !this.ownerEditing;
+    }
+
 }
