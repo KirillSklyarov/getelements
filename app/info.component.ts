@@ -35,14 +35,12 @@ export class InfoComponent implements OnInit, OnDestroy {
         this.subscription.unsubscribe();
     }
 
-    
     getOwner(gist: Gist): string {
         if ('owner' in gist) {
             return gist.owner.login;
         } else {
             return 'Anonimous';
         }
-
     }
 
     isAnonimous(gist: Gist): boolean{
@@ -53,9 +51,13 @@ export class InfoComponent implements OnInit, OnDestroy {
         let date = new Date(dateIso);
         return date.toLocaleString();
     }
+
+    hasAvatar(gist: Gist): boolean {
+        return ( ('owner' in gist) && ('avatar_url' in gist.owner) );
+    }
     
     getAvatarUrl(gist: Gist): string {
-        if ('owner' in gist) {
+        if ( ('owner' in gist) && ('avatar_url' in gist.owner) ) {
             return gist.owner.avatar_url;
         } else {
             return "";
@@ -76,6 +78,15 @@ export class InfoComponent implements OnInit, OnDestroy {
             this.owner = this.getOwner(this.gist);
         }
         this.ownerEditing = !this.ownerEditing;
+    }
+
+    ownerEscapeEdit() {
+        this.ownerEditing = false;
+    }
+
+    getDate(dateIso: string): string {
+        let date = new Date(dateIso);
+        return date.toLocaleString();
     }
 
 }

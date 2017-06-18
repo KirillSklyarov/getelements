@@ -44,8 +44,11 @@ var InfoComponent = (function () {
         var date = new Date(dateIso);
         return date.toLocaleString();
     };
+    InfoComponent.prototype.hasAvatar = function (gist) {
+        return (('owner' in gist) && ('avatar_url' in gist.owner));
+    };
     InfoComponent.prototype.getAvatarUrl = function (gist) {
-        if ('owner' in gist) {
+        if (('owner' in gist) && ('avatar_url' in gist.owner)) {
             return gist.owner.avatar_url;
         }
         else {
@@ -68,6 +71,13 @@ var InfoComponent = (function () {
             this.owner = this.getOwner(this.gist);
         }
         this.ownerEditing = !this.ownerEditing;
+    };
+    InfoComponent.prototype.ownerEscapeEdit = function () {
+        this.ownerEditing = false;
+    };
+    InfoComponent.prototype.getDate = function (dateIso) {
+        var date = new Date(dateIso);
+        return date.toLocaleString();
     };
     return InfoComponent;
 }());
