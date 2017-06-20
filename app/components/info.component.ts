@@ -2,13 +2,13 @@ import { Component, OnInit, OnDestroy} from '@angular/core';
 import { Response} from '@angular/http';
 import { ActivatedRoute} from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
-import { HttpService} from './http.service';
-import { Owner } from './gist/owner';
-import { Gist } from './gist/gist';
+import { HttpService} from './../services/http.service';
+import { Owner } from './../gist/owner';
+import { Gist } from './../gist/gist';
 
 @Component({
     selector: 'info-app',
-    templateUrl: `info.html`,
+    templateUrl: `../../pages/info.html`,
     styles: [`.anonimous{color:gray;}
             .invisible{display:none;}`],
     providers: [HttpService]

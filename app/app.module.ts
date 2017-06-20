@@ -4,11 +4,11 @@ import { BrowserModule } from '@angular/platform-browser';
  
 import { Routes, RouterModule } from '@angular/router';
 import { HttpModule }   from '@angular/http';
-import { HttpService }  from './http.service';
+import { HttpService }  from './services/http.service';
  
-import { AppComponent } from './app.component';
-import { HomeComponent } from './home.component';
-import { InfoComponent } from './info.component';
+import { AppComponent } from './components/app.component';
+import { HomeComponent } from './components/home.component';
+import { InfoComponent } from './components/info.component';
  
 // определение маршрутов
 const appRoutes: Routes =[

@@ -1,11 +1,11 @@
 import { Component, OnInit} from '@angular/core';
 import { Response} from '@angular/http';
-import { HttpService} from './http.service';
-import { Gist } from './gist/gist';
+import { HttpService} from './../services/http.service';
+import { Gist } from './../gist/gist';
  
 @Component({
     selector: 'home-app',
-    templateUrl: 'home.html',
+    templateUrl: `../../pages/home.html`,
     styles: [`.anonimous{color:gray;}`],
     providers: [HttpService]
 })
