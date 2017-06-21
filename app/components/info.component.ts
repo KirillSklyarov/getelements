@@ -10,7 +10,7 @@ import { Gist } from './../gist/gist'
   selector: 'info-app',
   templateUrl: `../../pages/info.html`,
   styles: [`.anonimous{color:gray;}
-      .invisible{display:none;}`],
+    .invisible{display:none;}`],
   providers: [HttpService]
 })
 export class InfoComponent implements OnInit, OnDestroy {
@@ -30,8 +30,36 @@ export class InfoComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit () {
-    this.httpService.getData('/gists/' + this.id).subscribe((data: Response) =>
-    this.gist = data.json())
+    this.httpService.getData('/gists/' + this.id).
+    subscribe((data: Response) => {
+      let rawGist: JSON = data.json()
+      let owner: Owner
+
+      this.gist['url'] = rawGist['url']
+      this.gist['forksUrl'] = rawGist['forks_url']
+      this.gist['commitsUrl'] = rawGist['commits_url']
+      this.gist['id'] = rawGist['id']
+      this.gist['description'] = rawGist['description']
+      this.gist['public'] = rawGist['public']
+      this.gist['user'] = rawGist['user']
+      this.gist['files'] = rawGist['files']
+      this.gist['truncated'] = rawGist['truncated']
+      this.gist['comments'] = rawGist['comments']
+      this.gist['commentsUrl'] = rawGist['comments_url']
+      this.gist['htmlUrl'] = rawGist['html_url']
+      this.gist['gitPullUrl'] = rawGist['git_pull_url']
+      this.gist['gitPushUrl'] = rawGist['git_push_url']
+      this.gist['createdAt'] = rawGist['created_at']
+      this.gist['updatedAt'] = rawGist['updated_at']
+
+      if ('owner' in rawGist) {
+        this.gist['owner'] = new Owner()
+        for (let propRawOwner in rawGist['owner']) {
+          this.gist['owner'][propRawOwner] =
+          rawGist['owner'][propRawOwner]
+        }
+      }
+    })
   }
 
   ngOnDestroy () {

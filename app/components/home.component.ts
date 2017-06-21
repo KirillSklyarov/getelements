@@ -46,7 +46,7 @@ export class HomeComponent implements OnInit {
             this.gists[i]['owner'][propRawOwner] =
             rawGists[i]['owner'][propRawOwner]
           }
-        } 
+        }
       }
     })
   }
@@ -57,7 +57,6 @@ export class HomeComponent implements OnInit {
     } else {
       return 'Anonimous'
     }
-
   }
 
   isAnonimous (gist: Gist): boolean {
