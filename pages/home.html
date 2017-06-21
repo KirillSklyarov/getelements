@@ -13,7 +13,7 @@
       <tr *ngFor="let gist of gists">
         <td [ngClass]="{anonimous:isAnonimous(gist)}">{{getOwner(gist)}}</td>
         <td>{{gist.description}}</td>
-        <td>{{getDate(gist.created_at)}}</td>
+        <td>{{getDate(gist.createdAt)}}</td>
         <td><a [routerLink]="['info', gist.id]">Подробнее</a></td>
       </tr>
     </tbody>

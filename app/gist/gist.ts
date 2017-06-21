@@ -2,19 +2,19 @@ import { Owner } from './owner'
 
 export class Gist {
   url: string
-  forks_url: string
+  forksUrl: string
   id: string
   description: string
-  public: string
+  public: boolean
   owner: Owner
   user: null
   files: any
   truncated: boolean
   comments: number
-  comments_url: string
-  html_url: string
-  git_pull_url: string
-  git_push_url: string
-  created_at: string
-  updated_at: string
+  commentsUrl: string
+  htmlUrl: string
+  gitPullUrl: string
+  gitPushUrl: string
+  createdAt: string
+  updatedAt: string
 }
