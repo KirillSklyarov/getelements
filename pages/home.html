@@ -1,21 +1,21 @@
 <h2>List of gists</h2>
 <div>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Владелец</th>
-                <th>Описание</th>
-                <th>Дата и время создания</th>
-                <th>Подробнее</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let gist of gists">
-                <td [ngClass]="{anonimous:isAnonimous(gist)}">{{getOwner(gist)}}</td>
-                <td>{{gist.description}}</td>
-                <td>{{getDate(gist.created_at)}}</td>
-                <td><a [routerLink]="['info', gist.id]">Подробнее</a></td>
-            </tr>
-        </tbody>
-    </table>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Владелец</th>
+        <th>Описание</th>
+        <th>Дата и время создания</th>
+        <th>Подробнее</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let gist of gists">
+        <td [ngClass]="{anonimous:isAnonimous(gist)}">{{getOwner(gist)}}</td>
+        <td>{{gist.description}}</td>
+        <td>{{getDate(gist.created_at)}}</td>
+        <td><a [routerLink]="['info', gist.id]">Подробнее</a></td>
+      </tr>
+    </tbody>
+  </table>
 </div>

@@ -1,21 +1,21 @@
 <h2>Info about gist</h2>
 <a [routerLink]="['/home']">На главную</a>
 <div>
-    <section>
-        <header>Владелец</header>
-        <p [ngClass]="{invisible:ownerEditing}" (click)="ownerEdit()">{{getOwner(gist)}}</p>
-        <input type="text" [ngClass]="{invisible:!ownerEditing}" [(ngModel)]="owner" 
-        (keypress)="($event.keyCode==13)? ownerEdit() : return"
-        (keypress)="($event.keyCode==27)? ownerEscapeEdit() : return">
-    </section>
-    <section [ngClass]="{invisible:!(hasAvatar(gist))}">
-        <img height="460" width="460" [src]="getAvatarUrl(gist)">
-    </section>
-    <section>
-        <a [href]="gist.html_url">Страница на Github</a>
-    </section>
-    <section>
-        <header>Дата создания</header>
-        <p>{{getDate(gist.created_at)}}</p>
-    </section>
+  <section>
+    <header>Владелец</header>
+    <p [ngClass]="{invisible:ownerEditing}" (click)="ownerEdit()">{{getOwner(gist)}}</p>
+    <input type="text" [ngClass]="{invisible:!ownerEditing}" [(ngModel)]="owner" 
+    (keypress)="($event.keyCode==13)? ownerEdit() : return"
+    (keypress)="($event.keyCode==27)? ownerEscapeEdit() : return">
+  </section>
+  <section [ngClass]="{invisible:!(hasAvatar(gist))}">
+    <img height="460" width="460" [src]="getAvatarUrl(gist)">
+  </section>
+  <section>
+    <a [href]="gist.html_url">Страница на Github</a>
+  </section>
+  <section>
+    <header>Дата создания</header>
+    <p>{{getDate(gist.created_at)}}</p>
+  </section>
 </div>

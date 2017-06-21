@@ -1,0 +1,22 @@
+
+ERROR: app/gist/gist.ts[5, 3]: variable name must be in lowerCamelCase, PascalCase or UPPER_CASE
+ERROR: app/gist/gist.ts[14, 3]: variable name must be in lowerCamelCase, PascalCase or UPPER_CASE
+ERROR: app/gist/gist.ts[15, 3]: variable name must be in lowerCamelCase, PascalCase or UPPER_CASE
+ERROR: app/gist/gist.ts[16, 3]: variable name must be in lowerCamelCase, PascalCase or UPPER_CASE
+ERROR: app/gist/gist.ts[17, 3]: variable name must be in lowerCamelCase, PascalCase or UPPER_CASE
+ERROR: app/gist/gist.ts[18, 3]: variable name must be in lowerCamelCase, PascalCase or UPPER_CASE
+ERROR: app/gist/gist.ts[19, 3]: variable name must be in lowerCamelCase, PascalCase or UPPER_CASE
+ERROR: app/gist/owner.ts[4, 3]: variable name must be in lowerCamelCase, PascalCase or UPPER_CASE
+ERROR: app/gist/owner.ts[5, 3]: variable name must be in lowerCamelCase, PascalCase or UPPER_CASE
+ERROR: app/gist/owner.ts[7, 3]: variable name must be in lowerCamelCase, PascalCase or UPPER_CASE
+ERROR: app/gist/owner.ts[8, 3]: variable name must be in lowerCamelCase, PascalCase or UPPER_CASE
+ERROR: app/gist/owner.ts[9, 3]: variable name must be in lowerCamelCase, PascalCase or UPPER_CASE
+ERROR: app/gist/owner.ts[10, 3]: variable name must be in lowerCamelCase, PascalCase or UPPER_CASE
+ERROR: app/gist/owner.ts[11, 3]: variable name must be in lowerCamelCase, PascalCase or UPPER_CASE
+ERROR: app/gist/owner.ts[12, 3]: variable name must be in lowerCamelCase, PascalCase or UPPER_CASE
+ERROR: app/gist/owner.ts[13, 3]: variable name must be in lowerCamelCase, PascalCase or UPPER_CASE
+ERROR: app/gist/owner.ts[14, 3]: variable name must be in lowerCamelCase, PascalCase or UPPER_CASE
+ERROR: app/gist/owner.ts[15, 3]: variable name must be in lowerCamelCase, PascalCase or UPPER_CASE
+ERROR: app/gist/owner.ts[16, 3]: variable name must be in lowerCamelCase, PascalCase or UPPER_CASE
+ERROR: app/gist/owner.ts[18, 3]: variable name must be in lowerCamelCase, PascalCase or UPPER_CASE
+
