@@ -3,6 +3,7 @@ import { Owner } from './owner'
 export class Gist {
   url: string
   forksUrl: string
+  commitsUrl: string
   id: string
   description: string
   public: boolean
